@@ -5,7 +5,7 @@ import AutoComplete from './AutoComplete'
 function App() {
   return (
     <div className="App">
-      <AutoComplete />
+      {/*<AutoComplete />*/}
     </div>
   )
 }
