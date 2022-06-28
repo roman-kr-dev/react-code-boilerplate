@@ -1,13 +1,103 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  background: #004fd6;
+  background: linear-gradient(180deg, rgba(0, 79, 214, 0.6) 0%, #fafafa 50%);
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input {
+  border: 1px solid #004fd6;
+  outline: none;
+  padding: 0 0.5rem;
+  flex: 1;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+}
+
+.loader {
+  position: absolute;
+  right: 20px;
+  top: 7px;
+  z-index: 9999;
+}
+
+.no-suggestions {
+  color: #999;
+  padding: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.suggestions {
+  border: 1px solid rgba(0, 79, 214, 0.5);
+  border-top-width: 0;
+  list-style: none;
+  margin-top: 0;
+  max-height: 143px;
+  overflow-y: auto;
+  padding-left: 0;
+  width: 300px;
+}
+
+.suggestions li {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.suggestion-active,
+.suggestions li:hover {
+  background: linear-gradient(90deg, rgba(0, 79, 214, 0.6) 0%, #fafafa 200%);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.suggestions li:not(:last-of-type) {
+  border-bottom: 1px solid #999;
+}
+
+/* Loader */
+.lds-dual-ring {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+
+.lds-dual-ring:after {
+  content: ' ';
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 6px solid #3f3f3f;
+  border-color: #3f3f3f transparent #3f3f3f transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
